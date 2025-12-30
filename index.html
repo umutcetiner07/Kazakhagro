@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <title>KazakhAgro - Modern Tarım ve Topraksız Tarım Çözümleri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        :root {
+            --primary: #0c6b4a;
+            --primary-dark: #06442e;
+            --accent: #f5b300;
+            --bg: #f5f7fa;
+            --text: #222;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: #fff;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 16px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background: linear-gradient(135deg, rgba(0,0,0,0.55), rgba(0,0,0,0.7)),
+                        url("https://images.pexels.com/photos/3738733/pexels-photo-3738733.jpeg?auto=compress&cs=tinysrgb&w=1600") center/cover no-repeat;
+            color: #fff;
+            padding: 80px 16px 90px;
+        }
+        .hero-inner {
+            max-width: 700px;
+        }
+        .hero h1 {
+            font-size: 2.4rem;
+            margin-bottom: 16px;
+        }
+        .hero p {
+            font-size: 1.05rem;
+            margin-bottom: 24px;
+        }
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: #222;
+        }
+        .btn-primary:hover {
+            background: #ffcb40;
+        }
+        .btn-outline {
+            border: 1px solid #fff;
+            color: #fff;
+        }
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.12);
+        }
+
+        section {
+            padding: 50px 16px;
+        }
+        h2 {
+            font-size: 1.6rem;
+            margin-bottom: 18px;
+            color: var(--primary-dark);
+        }
+        .section-intro {
+            max-width: 700px;
+            margin-bottom: 26px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+        .card {
+            background: #fff;
+            padding: 18px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+        .card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+        .tag {
+            display: inline-block;
+            background: #e6f5ef;
+            color: var(--primary-dark);
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            margin-bottom: 8px;
+        }
+        ul {
+            padding-left: 18px;
+            margin-top: 6px;
+        }
+        ul li {
+            margin-bottom: 4px;
+        }
+
+        .contact-box {
+            background: #fff;
+            padding: 22px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+        .contact-box p {
+            margin-bottom: 10px;
+        }
+        .contact-label {
+            font-weight: 600;
+        }
+        footer {
+            background: #111;
+            color: #aaa;
+            padding: 18px 0;
+            font-size: 0.85rem;
+        }
+        footer a {
+            color: #ddd;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            .hero {
+                padding-top: 60px;
+            }
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            .grid-3, .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">KazakhAgro</div>
+            <ul>
+                <li><a href="#about">Hakkımda</a></li>
+                <li><a href="#services">Hizmetler</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-inner">
+            <h1>Kazakistan’da Modern Tarım ve Topraksız Tarım Çözümleri</h1>
+            <p>
+                KazakhAgro, Kazakistan ve Türkî coğrafya için topraksız tarım, dikey tarım ve modern sera projelerine
+                odaklanan bağımsız bir danışmanlık ve içerik platformudur. Yatırımcılar, girişimciler ve kurumlar için
+                ön fizibilite, iş modeli tasarımı ve eğitim içerikleri sunuyorum.
+            </p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Projeni Anlat ▸</a>
+                <a href="#services" class="btn btn-outline">Hizmetlere Göz At</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="container">
+        <h2>Hakkımda</h2>
+        <div class="section-intro">
+            <p>
+                Ben [İsmin], topraksız tarım, dikey tarım ve modern sera sistemlerine ilgi duyan bir araştırmacı
+                ve içerik üreticisiyim. Özellikle, dünyada başarılı olmuş hidroponik ve dikey tarım startup'larının
+                iş modellerini inceleyerek, bu modellerin Kazakistan ve Türkî coğrafyada nasıl uygulanabileceğine
+                odaklanıyorum.
+            </p>
+            <p>
+                KazakhAgro'yu, hem yatırımcılar ve girişimciler için pratik bir başlangıç noktası, hem de modern tarım
+                alanında bilgi ve içerik üreten bir platform olarak kurdum. Büyük ölçekli bir sera kurucusu değilim;
+                ancak araştırma, fikir geliştirme, iş modeli yazma ve rapor &amp; sunum hazırlama tarafında size
+                destek olabilirim.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <div class="container">
+        <h2>Hizmetler</h2>
+        <div class="grid-2">
+            <div class="card">
+                <span class="tag">Fizibilite &amp; İş Modeli</span>
+                <h3>Ön Fizibilite Çalışması</h3>
+                <p>
+                    Topraksız tarım, dikey tarım veya modern sera projeniz için temel fizibilite ve iş modeli
+                    kurgusunu birlikte netleştiriyoruz.
+                </p>
+                <ul>
+                    <li>Ürün seçimi ve kapasite senaryoları</li>
+                    <li>Hedef pazar (perakende, toptan, horeca vb.)</li>
+                    <li>Basit gelir–gider ve geri dönüş hesapları</li>
+                    <li>10–15 sayfalık ön rapor (PDF)</li>
+                </ul>
+            </div>
+            <div class="card">
+                <span class="tag">Yatırımcı Sunumu</span>
+                <h3>Proje Özeti &amp; Sunum Hazırlama</h3>
+                <p>
+                    Projenizi yatırımcıya, banka yetkilisine veya resmi kuruma sunmanız gerekiyorsa, hikâyeyi ve
+                    rakamları anlaşılır bir şekilde topluyoruz.
+                </p>
+                <ul>
+                    <li>Proje hikâyesi ve hedefi</li>
+                    <li>Pazar gerekçesi (neden Kazakistan, neden bu model?)</li>
+                    <li>Temel finansal varsayımlar</li>
+                    <li>Sunum dosyası (PPT/Slides) + kısa proje özeti (PDF)</li>
+                </ul>
+            </div>
+            <div class="card">
+                <span class="tag">Online Danışmanlık</span>
+                <h3>Zoom Üzerinden Görüşmeler</h3>
+                <p>
+                    60–90 dakikalık online görüşmeler ile fikir aşamasındaki projelerinizi birlikte tartışıyor,
+                    dünyadaki örneklerden yola çıkarak yol haritası çıkarıyoruz.
+                </p>
+                <ul>
+                    <li>Fikir doğrulama ve risk analizi</li>
+                    <li>Hangi model size daha uygun?</li>
+                    <li>Sonrasında yazılı özet (e-posta ile)</li>
+                </ul>
+            </div>
+            <div class="card">
+                <span class="tag">Eğitim &amp; İçerik</span>
+                <h3>Eğitim ve İçerik Üretimi</h3>
+                <p>
+                    Okul, üniversite, belediye, tarım fuarı veya özel eğitimler için modern tarım odaklı içerikler
+                    hazırlıyorum.
+                </p>
+                <ul>
+                    <li>Tanıtım sunumları (topraksız tarım, dikey tarım vb.)</li>
+                    <li>Eğitim dokümanları ve PDF rehberler</li>
+                    <li>Blog ve sosyal medya içerikleri</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="blog">
+    <div class="container">
+        <h2>Blog</h2>
+        <div class="card">
+            <span class="tag">Yazı</span>
+            <h3>Neden Kazakistan’da Topraksız Tarım İçin Doğru Zaman?</h3>
+            <p>
+                Kazakistan, geniş tarım arazilerine sahip olmasına rağmen, iklim koşulları ve lojistik zorluklar
+                nedeniyle yıl boyunca istikrarlı ve kaliteli üretim yapmak her zaman kolay değil. Özellikle büyük
+                şehirlerde (Almatı, Astana) taze ve yerel üretim ihtiyacı her geçen gün artıyor.
+            </p>
+            <p>
+                Dünyada ise son yıllarda topraksız tarım (hydroponics), dikey tarım (vertical farming) ve konteyner
+                çiftlikler gibi kontrollü ortam tarım modelleri hızla yayılıyor. Bu sistemler; yıl boyunca üretim,
+                yüksek su tasarrufu ve şehir içinde üretim gibi önemli avantajlar sunuyor.
+            </p>
+            <p>
+                KazakhAgro olarak hedefim, dünyada başarılı olmuş bu modelleri Kazakistan şartlarına uyarlayarak;
+                yatırımcılar ve girişimciler için daha net ve uygulanabilir yol haritaları çıkarmak. Bu alanda bir
+                proje fikriniz varsa, iletişim bölümünden bana ulaşabilirsiniz.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <h2>İletişim</h2>
+        <div class="contact-box">
+            <p>Bir proje fikriniz veya sormak istediğiniz bir konu varsa, kısaca e-posta ile yazabilirsiniz.</p>
+            <p class="contact-label">E-posta:</p>
+            <p><a href="mailto:ornek@mail.com">ornek@mail.com</a></p>
+            <p class="contact-label">LinkedIn:</p>
+            <p><a href="#" target="_blank">LinkedIn profil linkiniz</a></p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© <span id="year"></span> KazakhAgro. Tüm hakları saklıdır.</p>
+    </div>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</footer>
+
+</body>
+</html>
