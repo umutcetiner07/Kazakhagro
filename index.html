@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KazakhAgro — Управление Агроактивами и Тепличный Аудит</title>
+  <title>KazakhAgro — Agro Asset Management & Greenhouse Audit</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
@@ -19,29 +19,40 @@
         <div class="w-10 h-10 bg-emerald-600 rounded-lg flex items-center justify-center font-extrabold text-white text-xl">KA</div>
         <span class="text-xl font-bold tracking-tight text-white">KazakhAgro</span>
       </div>
-      <a href="https://wa.me/905000000000" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition shadow-lg shadow-emerald-950">
-        Связаться в WhatsApp
-      </a>
+      
+      <div class="flex items-center gap-4">
+        <!-- DİL SEÇİCİ -->
+        <div class="flex items-center bg-slate-900 border border-slate-800 rounded-lg p-1 text-xs font-semibold">
+          <button onclick="setLanguage('ru')" id="btn-ru" class="px-2.5 py-1 rounded transition bg-emerald-600 text-white">RU</button>
+          <button onclick="setLanguage('kz')" id="btn-kz" class="px-2.5 py-1 rounded transition text-slate-400 hover:text-white">KZ</button>
+          <button onclick="setLanguage('tr')" id="btn-tr" class="px-2.5 py-1 rounded transition text-slate-400 hover:text-white">TR</button>
+          <button onclick="setLanguage('en')" id="btn-en" class="px-2.5 py-1 rounded transition text-slate-400 hover:text-white">EN</button>
+        </div>
+
+        <a href="https://wa.me/905000000000" target="_blank" class="hidden sm:inline-block bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition shadow-lg shadow-emerald-950">
+          WhatsApp
+        </a>
+      </div>
     </div>
   </header>
 
   <!-- HERO -->
   <section class="py-20 px-6 max-w-6xl mx-auto border-b border-slate-800">
     <div class="max-w-3xl">
-      <div class="inline-block px-3 py-1 rounded-full bg-emerald-950 border border-emerald-800 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-6">
+      <div id="hero-badge" class="inline-block px-3 py-1 rounded-full bg-emerald-950 border border-emerald-800 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-6">
         Управление агроактивами в Казахстане
       </div>
-      <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6">
+      <h1 id="hero-title" class="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6">
         От семени и рассады — до плановой прибыли тепличного комплекса.
       </h1>
-      <p class="text-lg text-slate-400 leading-relaxed mb-8">
+      <p id="hero-desc" class="text-lg text-slate-400 leading-relaxed mb-8">
         15 лет в реальном агробизнесе: защита инвестиций от экстремальных морозов (-40°C), устранение скрытых теплопотерь, аудит смет CAPEX/OPEX и операционное управление.
       </p>
       <div class="flex flex-wrap gap-4">
-        <a href="#services" class="bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-3.5 rounded-xl font-semibold text-sm transition">
+        <a href="#services" id="btn-services" class="bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-3.5 rounded-xl font-semibold text-sm transition">
           Наши направления
         </a>
-        <a href="#about" class="bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 px-8 py-3.5 rounded-xl font-semibold text-sm transition">
+        <a href="#about" id="btn-about" class="bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 px-8 py-3.5 rounded-xl font-semibold text-sm transition">
           Опыт 15 лет
         </a>
       </div>
@@ -50,50 +61,50 @@
     <!-- METRİKLER -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-10 border-t border-slate-900">
       <div>
-        <div class="text-3xl font-extrabold text-white mb-1">15+ лет</div>
-        <div class="text-xs text-slate-400">Практики (рассада, семена, теплицы)</div>
+        <div class="text-3xl font-extrabold text-white mb-1">15+ <span id="m1-suffix">лет</span></div>
+        <div id="m1-desc" class="text-xs text-slate-400">Практики (рассада, семена, теплицы)</div>
       </div>
       <div>
         <div class="text-3xl font-extrabold text-white mb-1">-40°C</div>
-        <div class="text-xs text-slate-400">Адаптация гидро- и термосистем</div>
+        <div id="m2-desc" class="text-xs text-slate-400">Адаптация гидро- и термосистем</div>
       </div>
       <div>
-        <div class="text-3xl font-extrabold text-white mb-1">Банки</div>
-        <div class="text-xs text-slate-400">ТЭО по стандартам «КазАгро» / «Байтерек»</div>
+        <div id="m3-title" class="text-3xl font-extrabold text-white mb-1">Банки</div>
+        <div id="m3-desc" class="text-xs text-slate-400">ТЭО по стандартам «КазАгро» / «Байтерек»</div>
       </div>
       <div>
-        <div class="text-3xl font-extrabold text-white mb-1">100% Практика</div>
-        <div class="text-xs text-slate-400">Точный расчет себестоимости кг</div>
+        <div id="m4-title" class="text-3xl font-extrabold text-white mb-1">100% Практика</div>
+        <div id="m4-desc" class="text-xs text-slate-400">Точный расчет себестоимости кг</div>
       </div>
     </div>
   </section>
 
   <!-- HİZMETLER -->
   <section id="services" class="py-20 px-6 max-w-6xl mx-auto border-b border-slate-800">
-    <h2 class="text-3xl font-bold text-white mb-4">Направления экспертной работы</h2>
-    <p class="text-slate-400 text-sm mb-12">Комплексная защита капитала инвестора на всех этапах жизненного цикла объекта.</p>
+    <h2 id="services-title" class="text-3xl font-bold text-white mb-4">Направления экспертной работы</h2>
+    <p id="services-sub" class="text-slate-400 text-sm mb-12">Комплексная защита капитала инвестора на всех этапах жизненного цикла объекта.</p>
 
     <div class="grid md:grid-cols-3 gap-8">
       <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800">
-        <div class="text-emerald-400 font-extrabold text-sm mb-3">01. АУДИТ</div>
-        <h3 class="text-xl font-bold text-white mb-3">Технический аудит</h3>
-        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+        <div id="s1-tag" class="text-emerald-400 font-extrabold text-sm mb-3">01. АУДИТ</div>
+        <h3 id="s1-title" class="text-xl font-bold text-white mb-3">Технический аудит</h3>
+        <p id="s1-desc" class="text-slate-400 text-sm leading-relaxed">
           Выявление скрытых теплопотерь при -40°C, инспекция отопительных контуров, балансировка гидравлики и проверка автоматики Priva.
         </p>
       </div>
 
       <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800">
-        <div class="text-emerald-400 font-extrabold text-sm mb-3">02. ФИНАНСЫ</div>
-        <h3 class="text-xl font-bold text-white mb-3">ТЭО и защита CAPEX</h3>
-        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+        <div id="s2-tag" class="text-emerald-400 font-extrabold text-sm mb-3">02. ФИНАНСЫ</div>
+        <h3 id="s2-title" class="text-xl font-bold text-white mb-3">ТЭО и защита CAPEX</h3>
+        <p id="s2-desc" class="text-slate-400 text-sm leading-relaxed">
           Подготовка ТЭО для «КазАгро» и «Байтерек». Жесткая экспертиза спецификаций, исключение навязанного оборудования и расчет реальной себестоимости.
         </p>
       </div>
 
       <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800">
-        <div class="text-emerald-400 font-extrabold text-sm mb-3">03. ПРОИЗВОДСТВО</div>
-        <h3 class="text-xl font-bold text-white mb-3">От семени до сбора</h3>
-        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+        <div id="s3-tag" class="text-emerald-400 font-extrabold text-sm mb-3">03. ПРОИЗВОДСТВО</div>
+        <h3 id="s3-title" class="text-xl font-bold text-white mb-3">От семени до сбора</h3>
+        <p id="s3-desc" class="text-slate-400 text-sm leading-relaxed">
           Подбор стрессоустойчивых гибридов, запуск рассадных отделений (прививка, корни), технологическое сопровождение и выход на плановую урожайность.
         </p>
       </div>
@@ -104,27 +115,27 @@
   <section id="about" class="py-20 px-6 max-w-6xl mx-auto border-b border-slate-800">
     <div class="bg-slate-900/60 border border-slate-800 p-8 md:p-12 rounded-3xl grid md:grid-cols-2 gap-10 items-center">
       <div>
-        <h2 class="text-3xl font-bold text-white mb-6">Почему инвесторы доверяют KazakhAgro?</h2>
-        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+        <h2 id="about-title" class="text-3xl font-bold text-white mb-6">Почему инвесторы доверяют KazakhAgro?</h2>
+        <p id="about-p1" class="text-slate-300 text-sm leading-relaxed mb-4">
           Большинство тепличных комплексов в Центральной Азии несут убытки из-за критического разрыва: инженеры не знают биологию растения, агрономы не считают бюджет, а менеджеры не понимают причин гибели посадок при -35°C.
         </p>
-        <p class="text-slate-400 text-sm leading-relaxed">
+        <p id="about-p2" class="text-slate-400 text-sm leading-relaxed">
           Мой профиль закрывает эту пропасть благодаря 15 годам реальной полевой практики и высшему бизнес-образованию.
         </p>
       </div>
 
       <div class="space-y-4">
         <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
-          <div class="text-emerald-400 font-bold text-sm mb-1">6 Лет: Питомники и рассада</div>
-          <div class="text-slate-400 text-xs">Технологии прививки, развитие мощной корневой системы, управление адаптационным стрессом.</div>
+          <div id="exp1-title" class="text-emerald-400 font-bold text-sm mb-1">6 Лет: Питомники и рассада</div>
+          <div id="exp1-desc" class="text-slate-400 text-xs">Технологии прививки, развитие мощной корневой системы, управление адаптационным стрессом.</div>
         </div>
         <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
-          <div class="text-emerald-400 font-bold text-sm mb-1">3 Года: Селекция и семена</div>
-          <div class="text-slate-400 text-xs">Подбор гибридов под жесткие климатические условия и контракты на дистрибуцию.</div>
+          <div id="exp2-title" class="text-emerald-400 font-bold text-sm mb-1">3 Года: Селекция и семена</div>
+          <div id="exp2-desc" class="text-slate-400 text-xs">Подбор гибридов под жесткие климатические условия и контракты на дистрибуцию.</div>
         </div>
         <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
-          <div class="text-emerald-400 font-bold text-sm mb-1">6+ Лет: Эксплуатация теплиц</div>
-          <div class="text-slate-400 text-xs">Прямое управление гектарами закрытого грунта, оптимизация OPEX и микроклимата.</div>
+          <div id="exp3-title" class="text-emerald-400 font-bold text-sm mb-1">6+ Лет: Эксплуатация теплиц</div>
+          <div id="exp3-desc" class="text-slate-400 text-xs">Прямое управление гектарами закрытого грунта, оптимизация OPEX и микроклимата.</div>
         </div>
       </div>
     </div>
@@ -132,18 +143,81 @@
 
   <!-- İLETİŞİM -->
   <section class="py-20 px-6 max-w-4xl mx-auto text-center">
-    <h2 class="text-3xl font-bold text-white mb-4">Обсудить аудит или проект</h2>
-    <p class="text-slate-400 text-sm mb-8">
+    <h2 id="contact-title" class="text-3xl font-bold text-white mb-4">Обсудить аудит или проект</h2>
+    <p id="contact-desc" class="text-slate-400 text-sm mb-8">
       Свяжитесь напрямую для консультации по тепловым рискам, проверке сметы или аудиту действующего комплекса.
     </p>
-    <a href="https://wa.me/905000000000" target="_blank" class="inline-block bg-emerald-600 hover:bg-emerald-500 text-white px-10 py-4 rounded-xl font-bold text-base transition shadow-lg shadow-emerald-950">
+    <a href="https://wa.me/905000000000" target="_blank" id="btn-wa" class="inline-block bg-emerald-600 hover:bg-emerald-500 text-white px-10 py-4 rounded-xl font-bold text-base transition shadow-lg shadow-emerald-950">
       Написать в WhatsApp
     </a>
   </section>
 
   <footer class="py-8 border-t border-slate-900 text-center text-xs text-slate-500">
-    © 2026 KazakhAgro. Управление агроактивами и тепличный консалтинг в Казахстане.
+    <span id="footer-text">© 2026 KazakhAgro. Управление агроактивами и тепличный консалтинг в Казахстане.</span>
   </footer>
 
-</body>
-</html>
+  <!-- DİL SÖZLÜĞÜ VE DİNAMİK GEÇİŞ SCRIPTI -->
+  <script>
+    const translations = {
+      ru: {
+        badge: "Управление агроактивами в Казахстане",
+        heroTitle: "От семени и рассады — до плановой прибыли тепличного комплекса.",
+        heroDesc: "15 лет в реальном агробизнесе: защита инвестиций от экстремальных морозов (-40°C), устранение скрытых теплопотерь, аудит смет CAPEX/OPEX и операционное управление.",
+        btnServices: "Наши направления",
+        btnAbout: "Опыт 15 лет",
+        m1Suffix: "лет",
+        m1Desc: "Практики (рассада, семена, теплицы)",
+        m2Desc: "Адаптация гидро- и термосистем",
+        m3Title: "Банки",
+        m3Desc: "ТЭО по стандартам «КазАгро» / «Байтерек»",
+        m4Title: "100% Практика",
+        m4Desc: "Точный расчет себестоимости кг",
+        servicesTitle: "Направления экспертной работы",
+        servicesSub: "Комплексная защита капитала инвестора на всех этапах жизненного цикла объекта.",
+        s1Tag: "01. АУДИТ",
+        s1Title: "Технический аудит",
+        s1Desc: "Выявление скрытых теплопотерь при -40°C, инспекция отопительных контуров, балансировка гидравлики и проверка автоматики Priva.",
+        s2Tag: "02. ФИНАНСЫ",
+        s2Title: "ТЭО и защита CAPEX",
+        s2Desc: "Подготовка ТЭО для «КазАгро» и «Байтерек». Жесткая экспертиза спецификаций, исключение навязанного оборудования и расчет реальной себестоимости.",
+        s3Tag: "03. ПРОИЗВОДСТВО",
+        s3Title: "От семени до сбора",
+        s3Desc: "Подбор стрессоустойчивых гибридов, запуск рассадных отделений (прививка, корни), технологическое сопровождение и выход на плановую урожайность.",
+        aboutTitle: "Почему инвесторы доверяют KazakhAgro?",
+        aboutP1: "Большинство тепличных комплексов в Центральной Азии несут убытки из-за критического разрыва: инженеры не знают биологию растения, агрономы не считают бюджет, а менеджеры не понимают причин гибели посадок при -35°C.",
+        aboutP2: "Мой профиль закрывает эту пропасть благодаря 15 годам реальной полевой практики и высшему бизнес-образованию.",
+        exp1Title: "6 Лет: Питомники и рассада",
+        exp1Desc: "Технологии прививки, развитие мощной корневой системы, управление адаптационным стрессом.",
+        exp2Title: "3 Года: Селекция и семена",
+        exp2Desc: "Подбор гибридов под жесткие климатические условия и контракты на дистрибуцию.",
+        exp3Title: "6+ Лет: Эксплуатация теплиц",
+        exp3Desc: "Прямое управление гектарами закрытого грунта, оптимизация OPEX и микроклимата.",
+        contactTitle: "Обсудить аудит или проект",
+        contactDesc: "Свяжитесь напрямую для консультации по тепловым рискам, проверке сметы или аудиту действующего комплекса.",
+        btnWa: "Написать в WhatsApp",
+        footerText: "© 2026 KazakhAgro. Управление агроактивами и тепличный консалтинг в Казахстане."
+      },
+      kz: {
+        badge: "Қазақстандағы агроактивтерді басқару",
+        heroTitle: "Тұқым мен көшеттен — жылыжай кешенінің жоспарлы табысына дейін.",
+        heroDesc: "Нақты агробизнесте 15 жыл: инвестицияларды қатал аяздан (-40°C) қорғау, жасырын жылу шығындарын жою, CAPEX/OPEX сметалық аудиті және операциялық басқару.",
+        btnServices: "Біздің бағыттар",
+        btnAbout: "15 жылдық тәжірибе",
+        m1Suffix: "жыл",
+        m1Desc: "Тәжірибе (көшет, тұқым, жылыжайлар)",
+        m2Desc: "Гидро және терможүйелерді бейімдеу",
+        m3Title: "Банктер",
+        m3Desc: "«ҚазАгро» / «Бәйтерек» стандарттары бойынша ТЭН",
+        m4Title: "100% Тәжірибе",
+        m4Desc: "Кг өзіндік құнын нақты есептеу",
+        servicesTitle: "Сараптамалық жұмыс бағыттары",
+        servicesSub: "Нысанның барлық кезеңдерінде инвестор капиталын кешенді қорғау.",
+        s1Tag: "01. АУДИТ",
+        s1Title: "Техникалық аудит",
+        s1Desc: "-40°C кезіндегі жылу шығындарын анықтау, жылыту контурларын тексеру, гидравликаны теңдестіру және Priva автоматикасын бақылау.",
+        s2Tag: "02. ҚАРЖЫ",
+        s2Title: "ТЭН және CAPEX қорғау",
+        s2Desc: "«ҚазАгро» және «Бәйтерек» үшін ТЭН дайындау. Техникалық сипаттамаларды қатаң сараптау, артық жабдықты болдырмау және нақты өзіндік құнды есептеу.",
+        s3Tag: "03. ӨНДІРІС",
+        s3Title: "Тұқымнан өнімге дейін",
+        s3Desc: "Төзімді будандарды таңдау, көшет бөлімшелерін іске қосу (егу, тамыр жүйесі), технологиялық сүйемелдеу және жоспарлы өнім
